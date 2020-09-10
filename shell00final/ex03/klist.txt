@@ -1,4 +1,0 @@
-Credentials cache: API:705BD160-8E8D-49F5-95C4-AEA116B8655A
-        Principal: Mruhl@S19.BE
-
-  Issued    Expires    Principal

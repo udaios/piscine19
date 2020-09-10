@@ -1,0 +1,6 @@
+Credentials cache: API:1A3AF545-1C37-4056-A627-C33534D5581C
+        Principal: mruhl@S19.BE
+
+  Issued                Expires             Flags    Principal
+Sep  9 22:12:27 2020  Sep 10 08:12:27 2020  FPRIA  krbtgt/S19.BE@S19.BE
+Sep  9 22:12:29 2020  Sep 10 08:12:27 2020  FPA    HTTP/san-ssd.s19.be@S19.BE
