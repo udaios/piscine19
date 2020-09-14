@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 18:47:57 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/14 12:54:30 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/14 12:57:40 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/14 13:22:31 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_is_negative(int n)
+void	ft_print_comb(void)
 {
-	char s;
+	char a;
+	char b;
+	char c;
 
-	if (n < 0)
+	a = '0';
+	b = '1';
+	c = '2';
+	while (c <= '9')
 	{
-		s = 'N';
-		write(1, &s, 1);
+		write(1, '&a''&b''&c', 1);
+		c++;
 	}
-	else
-	{
-		s = 'P';
-		write(1, &s, 1);
-	}
-}
-
-int		main(void)
-{
-	ft_is_negative(-2);
-	return (0);
 }
