@@ -6,7 +6,7 @@
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/14 12:57:40 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/14 13:22:31 by mruhl            ###   ########.fr       */
+/*   Updated: 2020/09/14 13:47:12 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,31 @@
 
 void	ft_print_comb(void)
 {
-	char a;
-	char b;
-	char c;
+	int a;
+	int b;
+	int c;
 
-	a = '0';
-	b = '1';
-	c = '2';
-	while (c <= '9')
+	a = 0;
+	b = 1;
+	c = 2;
+	if ( a != b || b != c || a != c)
 	{
-		write(1, '&a''&b''&c', 1);
-		c++;
+		while (c <= 9)
+		{
+			write(1 , &a&b&c, 1);
+			c++;
+
+			while (b <= 9)
+			{
+				write(1 ,&a&b&c, 1);
+				b++;
+
+				while (a <= 9)
+				{
+					write(1 , &a&b&c, 1)
+					a++;
+				}
+			}
+		}
 	}
 }
