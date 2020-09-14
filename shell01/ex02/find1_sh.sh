@@ -1,1 +1,1 @@
-find . -type f -iname "*.sh" | sed 's/\.sh$/'
+find . -type f -iname "*.sh" | sed "s/\.sh$/"
