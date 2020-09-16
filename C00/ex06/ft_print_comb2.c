@@ -6,72 +6,74 @@
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 13:11:28 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/16 13:30:03 by mruhl            ###   ########.fr       */
+/*   Updated: 2020/09/16 22:46:05 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_display(int a, int b)
+void	ft_display(char a, char b, char c, char d)
 {
-	if (a >= 10 && b >= 10)
-	{
-	write(1, " ", 1);
 	write(1, &a, 1);
-	write(1, " ", 1);
 	write(1, &b, 1);
+	write(1, " ", 1);
+	write(1, &c, 1);
+	write(1, &d, 1);
 	write(1, ",", 1);
-	}
-	else
-	{
-		if (a < 10)
-		{
-			write(1, " ", 1);
-			write(1, "0", 1);
-			write(1, &a, 1);
-			write(1, " ", 1);
-			write(1, &b, 1);
-			write(1, ",", 1);
-		}
-		else if (b < 10)
-		{
-			write(1, " ", 1);
-			write(1, &a, 1);
-			write(1, " ", 1);
-			write(1, "0", 1);
-			write(1, &b, 1);
-			write(1, ",", 1);
-		}
-		else
-		{
-			write(1, " ", 1);
-			write(1, "0", 1);
-			write(1, &a, 1);
-			write(1, " ", 1);
-			write(1, "0", 1);
-			write(1, &b, 1);
-			write(1, ",", 1);
-		}
-	}
+	write(1, " ", 1);
 }
 
 void	ft_print_comb2(void)
 {
-	int nb1;
-	int nb2;
-
-	nb1 = 0;
-	nb2 = 1;
-	while (nb1 <= 98)
+	int a;
+	int b;
+	char m;
+	char n;
+	char o;
+	char p;
+	
+	a = 0;
+	b = 1;
+	while (a <= 98)
 	{
-		nb2 = nb1 + 1;
-		while (nb2 <= 99)
+		b = a + 1;
+		while (b <= 99)
 		{
-			ft_display(nb1, nb2);
-			nb2++;
+			if (a >= 10 && b >= 10)
+			{
+			m = a / 10 + '0';
+			n = a % 10;
+			o = b / 10 + '0';
+			p = b % 10;
+			ft_display(m, n, o, p);
+			}
+			else if (a < 10)
+			{
+			m = '0';
+			n = a % 10;
+			o = b / 10 + '0';
+			p = b % 10;
+			ft_display(m, n, o, p);
+			}
+			else if (b < 10)
+			{
+			m = a / 10 + '0';
+			n = a % 10;
+			o = '0';
+			p = b % 10;
+			ft_display(m, n, o, p);
+			}
+			else
+			{
+			m = '0';
+			n = a % 10;
+			o = '0';
+			p = b % 10;
+			ft_display(m, n, o, p);
+			}
+			b++;
 		}
-		ft_display(nb1, nb2);
-		nb1++;
+		a++;
 	}
 }
 
