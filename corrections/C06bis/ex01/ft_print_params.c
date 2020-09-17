@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar1.c                                      :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: dbanzizi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 17:19:03 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/17 14:47:49 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/16 13:18:39 by dbanzizi          #+#    #+#             */
+/*   Updated: 2020/09/16 13:23:05 by dbanzizi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,27 @@
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
+}
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+	{
+		ft_putchar(*str);
+		str++;
+	}
+}
+
+int		main(int argc, char **argv)
+{
+	int i;
+
+	i = 1;
+	while (i < argc)
+	{
+		ft_putstr(argv[i]);
+		ft_putchar('\n');
+		i++;
+	}
+	return (0);
 }

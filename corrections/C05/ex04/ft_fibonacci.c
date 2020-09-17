@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar1.c                                      :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: tpetit <tpetit@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 17:19:03 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/17 14:47:49 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/13 16:18:55 by tpetit            #+#    #+#             */
+/*   Updated: 2020/09/16 08:28:23 by tpetit           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int		ft_fibonacci(int index)
 {
-	write(1, &c, 1);
+	if (index < 0)
+		return (-1);
+	if (index <= 1)
+		return (index);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }

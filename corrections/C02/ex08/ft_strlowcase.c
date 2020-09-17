@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar1.c                                      :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: kkalinic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 17:19:03 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/17 14:47:49 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/14 19:27:02 by kkalinic          #+#    #+#             */
+/*   Updated: 2020/09/14 19:32:57 by kkalinic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+char	*ft_strlowcase(char *str)
 {
-	write(1, &c, 1);
+	int i;
+
+	i = -1;
+	while (str[++i] != '\0')
+	{
+		if (str[i] >= 65 && str[i] <= 90)
+			str[i] = str[i] + 32;
+	}
+	return (str);
 }

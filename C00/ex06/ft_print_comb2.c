@@ -6,7 +6,7 @@
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 13:11:28 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/16 22:46:05 by mruhl            ###   ########.fr       */
+/*   Updated: 2020/09/17 15:09:49 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@ void	ft_print_comb2(void)
 {
 	int a;
 	int b;
-	char m;
-	char n;
-	char o;
-	char p;
 	
 	a = 0;
 	b = 1;
@@ -41,35 +37,19 @@ void	ft_print_comb2(void)
 		{
 			if (a >= 10 && b >= 10)
 			{
-			m = a / 10 + '0';
-			n = a % 10;
-			o = b / 10 + '0';
-			p = b % 10;
-			ft_display(m, n, o, p);
+				ft_display(a / 10 + '0', a % 10, b / 10 + '0', b % 10);
 			}
 			else if (a < 10)
 			{
-			m = '0';
-			n = a % 10;
-			o = b / 10 + '0';
-			p = b % 10;
-			ft_display(m, n, o, p);
+				ft_display('0', a % 10, b / 10 + '0', b % 10);
 			}
 			else if (b < 10)
 			{
-			m = a / 10 + '0';
-			n = a % 10;
-			o = '0';
-			p = b % 10;
-			ft_display(m, n, o, p);
+				ft_display(a /10 + '0', a % 10, '0', b % 10);
 			}
 			else
 			{
-			m = '0';
-			n = a % 10;
-			o = '0';
-			p = b % 10;
-			ft_display(m, n, o, p);
+				ft_display('0', a % 10, '0', b % 10);
 			}
 			b++;
 		}

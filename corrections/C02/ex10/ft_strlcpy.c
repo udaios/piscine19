@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: kkalinic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 17:30:12 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/17 14:48:19 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/15 09:20:44 by kkalinic          #+#    #+#             */
+/*   Updated: 2020/09/16 15:54:13 by kkalinic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+unsigned int		ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	char c;
+	unsigned int	i;
 
-	c = 'a';
-	while
-		(c <= 'z')
+	i = 0;
+	if (size > 0)
 	{
-		write(1, &c, 1);
-		c++;
+		while (src[i])
+		{
+			if (i < size - 1)
+				dest[i] = src[i];
+			else
+				break ;
+			i++;
+		}
 	}
+	dest[i] = '\0';
+	i = 0;
+	while (src[i])
+		i++;
+	return (i);
 }

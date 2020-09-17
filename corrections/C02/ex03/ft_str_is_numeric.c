@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar1.c                                      :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: kkalinic <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 17:19:03 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/17 14:47:49 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/14 13:39:44 by kkalinic          #+#    #+#             */
+/*   Updated: 2020/09/14 16:36:18 by kkalinic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+int			ft_str_is_numeric(char *str)
 {
-	write(1, &c, 1);
+	int i;
+
+	i = -1;
+	while (str[++i] != '\0')
+	{
+		if (str[i] >= 48 && str[i] <= 57)
+		{
+			;
+		}
+		else
+			return (0);
+	}
+	return (1);
 }
