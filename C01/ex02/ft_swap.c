@@ -1,43 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 13:11:28 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/17 19:24:48 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/18 17:52:03 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/18 21:04:38 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_display(char c)
+void	ft_swap(int *a, int *b)
 {
-	write(1, &c, 1);
+int *temp;
+int nbr1;
+int nbr2;
+nbr1 = 5;
+nbr2 = 6
+&nbr1 = a;
+&nbr2 = b;
+
+printf("%d", *a);
+printf("%d", *b);
+
+temp = a;
+a = b;
+b = temp;
+
+printf("%d", *a);
+printf("%d", *b);
 }
 
-void	ft_print_comb2(void)
+int		main(void)
 {
-	int a;
-	int b;
-
-	a = 0;
-	b = 1;
-	while (a <= 98)
-	{
-		while (b < 100)
-		{
-			ft_display(a / 10 + '0');
-			ft_display(a % 10 + '0');
-			ft_display(' ');
-			ft_display(b / 10 + '0');
-			ft_display(b % 10 + '0');
-			if (a < 98)
-				write(1, ", ", 2);
-			b++;
-		}
-		a++;
-		b = a + 1;
-	}
+int a;
+int b;
+	ft_swap();
+	return (0);
 }
