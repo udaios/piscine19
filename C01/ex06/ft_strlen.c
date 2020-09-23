@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/18 17:52:03 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/21 16:10:08 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/21 19:14:53 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/21 19:29:03 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	ft_swap(int *a, int *b)
+int		ft_strlen(char *str)
 {
-	int t;
+	int i;
 
-	t = *a;
-	*a = *b;
-	*b = t;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	printf("%d", i);
+	return (i);
+}
+
+int		main(void)
+{
+	ft_strlen("my function works");
+	return (0);
 }

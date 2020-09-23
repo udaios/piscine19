@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/18 17:52:03 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/21 16:10:08 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/21 18:58:44 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/21 19:13:23 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-void	ft_swap(int *a, int *b)
+void	ft_putstr(char *str)
 {
-	int t;
+	int i;
 
-	t = *a;
-	*a = *b;
-	*b = t;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+}
+
+int		main(void)
+{
+	ft_putstr("hello world!");
+	return (0);
 }
