@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 15:19:49 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/24 16:13:40 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/24 16:02:39 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/24 16:15:56 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	int i;
 	int j;
@@ -21,7 +21,7 @@ char	*ft_strcat(char *dest, char *src)
 	i = 0;
 	while (dest[i] != '\0')
 		i++;
-	while (src[j] != '\0')
+	while (j < nb || src[j] == '\0')
 	{
 		dest[i] = src[j];
 		i++;
@@ -35,7 +35,7 @@ int		main(void)
 {
 	char a[] = "world";
 	char b[] = "hello ";
-	ft_strcat(b, a);
+	ft_strncat(b, a, 3);
 	printf("%s", b);
 	return (0);
 }

@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/24 15:19:49 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/24 16:13:40 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/24 15:14:13 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/24 15:16:42 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-char	*ft_strcat(char *dest, char *src)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	int i;
-	int j;
+	int res;
 
-	j = 0;
+	res = 0;
 	i = 0;
-	while (dest[i] != '\0')
-		i++;
-	while (src[j] != '\0')
+	while (i <= n)
 	{
-		dest[i] = src[j];
+		res = s1[i] - s2[i];
 		i++;
-		j++;
 	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-int		main(void)
-{
-	char a[] = "world";
-	char b[] = "hello ";
-	ft_strcat(b, a);
-	printf("%s", b);
-	return (0);
+	if (res > 0)
+		return (1);
+	else if (res == 0)
+		return (0);
+	else
+		return (-1);
 }
