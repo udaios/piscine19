@@ -1,46 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/21 19:34:28 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/24 14:45:15 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/23 17:48:02 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/23 18:01:26 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
 
-void	ft_rev_int_tab(int *tab, int size)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	int i;
-	int j;
-	int temp;
+	printf("%s", dest);
+	printf("%s", src);
 
-	j = size - 1;
 	i = 0;
-	while (i < j)
+	while (src[i] != '\0' && i <= n)
 	{
-		temp = tab[j];
-		tab[j] = tab[i];
-		tab[i] = temp;
-		i++;
-		j--;
-	}
-	i = 0;
-	while (i < size)
-	{
-		printf("%d", tab[i]);
+		dest[i] = src[i];
 		i++;
 	}
+	printf("%s", dest);
+	printf("%s", src);
+	return (dest);
 }
 
 int		main(void)
 {
-	int tab[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	char a[] = "hi";
+	char b[] = "salut";
 
-	ft_rev_int_tab(tab, 10);
+	ft_strncpy(b, a, 4);
 	return (0);
 }

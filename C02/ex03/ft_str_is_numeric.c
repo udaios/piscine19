@@ -1,46 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/21 19:34:28 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/24 14:45:15 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/23 18:04:16 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/23 18:51:58 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-
-void	ft_rev_int_tab(int *tab, int size)
+int		ft_str_is_numeric(char *str)
 {
 	int i;
-	int j;
-	int temp;
 
-	j = size - 1;
 	i = 0;
-	while (i < j)
+	while (str[i] != '\0')
 	{
-		temp = tab[j];
-		tab[j] = tab[i];
-		tab[i] = temp;
-		i++;
-		j--;
+		if (!(str[i] >= 48) || (str[i] <= 57))
+		{
+			return (0);
+			i++;
+		}
 	}
-	i = 0;
-	while (i < size)
-	{
-		printf("%d", tab[i]);
-		i++;
-	}
-}
-
-int		main(void)
-{
-	int tab[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-	ft_rev_int_tab(tab, 10);
-	return (0);
+	return (1);
 }

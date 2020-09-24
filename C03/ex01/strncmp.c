@@ -1,46 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   strncmp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/21 19:34:28 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/24 14:45:15 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/23 22:11:30 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/23 22:17:07 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-
-void	ft_rev_int_tab(int *tab, int size)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	int i;
-	int j;
-	int temp;
+	int res;
 
-	j = size - 1;
+	res = 0;
 	i = 0;
-	while (i < j)
+	while (i <= n)
 	{
-		temp = tab[j];
-		tab[j] = tab[i];
-		tab[i] = temp;
-		i++;
-		j--;
-	}
-	i = 0;
-	while (i < size)
-	{
-		printf("%d", tab[i]);
-		i++;
+		res = s1[i] - s2[i];
+		return (res);
 	}
 }
 
-int		main(void)
+int 	main(void)
 {
-	int tab[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-	ft_rev_int_tab(tab, 10);
+	ft_strncmp();
 	return (0);
 }

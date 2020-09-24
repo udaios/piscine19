@@ -1,46 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/21 19:34:28 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/24 14:45:15 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/23 19:07:44 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/23 19:23:29 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
 
-void	ft_rev_int_tab(int *tab, int size)
+char	*ft_strupcase(char *str)
 {
 	int i;
-	int j;
-	int temp;
 
-	j = size - 1;
 	i = 0;
-	while (i < j)
+	while (str[i] != '\0')
 	{
-		temp = tab[j];
-		tab[j] = tab[i];
-		tab[i] = temp;
-		i++;
-		j--;
-	}
-	i = 0;
-	while (i < size)
-	{
-		printf("%d", tab[i]);
+		if (str[i] >= 97 && str[i] <= 122)
+			str[i] = str[i] - 32;
 		i++;
 	}
+	return (str);
 }
 
 int		main(void)
 {
-	int tab[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	char a[5] = {'a', 'U', 'p', 'T', 'r'};
 
-	ft_rev_int_tab(tab, 10);
+	ft_strupcase(a);
+	printf("%s", a);
 	return (0);
 }

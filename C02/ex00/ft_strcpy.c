@@ -6,7 +6,7 @@
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 11:17:00 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/23 13:55:07 by mruhl            ###   ########.fr       */
+/*   Updated: 2020/09/23 17:54:36 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strcpy(char *dest, char *src)
 	printf("%s", src);
 
 	i = 0;
-	while (dest[i] != '\0')
+	while (src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;

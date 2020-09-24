@@ -1,46 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/21 19:34:28 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/24 14:45:15 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/23 19:25:33 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/23 19:46:21 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
 
-void	ft_rev_int_tab(int *tab, int size)
+char	*ft_strlowcase(char *str)
 {
-	int i;
-	int j;
-	int temp;
+	char *tab;
 
-	j = size - 1;
-	i = 0;
-	while (i < j)
+	tab = str;
+	while (*tab != '\0')
 	{
-		temp = tab[j];
-		tab[j] = tab[i];
-		tab[i] = temp;
-		i++;
-		j--;
+		if (*tab >= 65 && *tab <= 90)
+			*tab += 32;
+		tab++;
 	}
-	i = 0;
-	while (i < size)
-	{
-		printf("%d", tab[i]);
-		i++;
-	}
+	return (str);
 }
 
 int		main(void)
 {
-	int tab[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-	ft_rev_int_tab(tab, 10);
+	char a[5] = {'a', 'T', 'J', 'h', 'b'};
+	ft_strlowcase(a);
+	printf("%s", a);
 	return (0);
 }

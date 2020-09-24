@@ -1,46 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/21 19:34:28 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/24 14:45:15 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/23 19:55:17 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/23 20:39:04 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
 
-void	ft_rev_int_tab(int *tab, int size)
+char	*ft_strcapitalize(char *str)
 {
+	char *p;
 	int i;
-	int j;
-	int temp;
 
-	j = size - 1;
-	i = 0;
-	while (i < j)
+	i= 0;
+	p = str;
+	while (str[i] != '\0')
 	{
-		temp = tab[j];
-		tab[j] = tab[i];
-		tab[i] = temp;
-		i++;
-		j--;
-	}
-	i = 0;
-	while (i < size)
-	{
-		printf("%d", tab[i]);
+		if (str[i] >= 'a' && str[i] <= 'z')
+		{
+			if (str[i-1] < 'a' && str[i-1] > 'z')
+			{
+				if (!(str[i-1] >= '0' && str[i-1] <= '9'))
+					str[i] -= 32;
+			}
+		}
 		i++;
 	}
+	return (str);
 }
 
 int		main(void)
 {
-	int tab[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	char a[100] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
 
-	ft_rev_int_tab(tab, 10);
+	ft_strcapitalize(a);
+	printf("%s", a);
 	return (0);
 }

@@ -1,46 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/21 19:34:28 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/24 14:45:15 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/23 21:54:55 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/23 22:11:01 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-
-void	ft_rev_int_tab(int *tab, int size)
+int		ft_strcmp(char *s1, char *s2)
 {
 	int i;
-	int j;
-	int temp;
+	int res;
 
-	j = size - 1;
+	res = 0;
 	i = 0;
-	while (i < j)
+	while (i )
 	{
-		temp = tab[j];
-		tab[j] = tab[i];
-		tab[i] = temp;
-		i++;
-		j--;
-	}
-	i = 0;
-	while (i < size)
-	{
-		printf("%d", tab[i]);
+		res = s1[i] - s2[i];
 		i++;
 	}
+	if (res > 0)
+		return (1);
+	else if (res == 0)
+		return (0);
+	else
+		return (-1);
 }
 
 int		main(void)
 {
-	int tab[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+	char a1[] = "salut";
+	char a2[] = "hello";
 
-	ft_rev_int_tab(tab, 10);
+	ft_strcmp(a1, a2);
 	return (0);
 }
