@@ -6,7 +6,7 @@
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/23 11:17:00 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/23 17:54:36 by mruhl            ###   ########.fr       */
+/*   Updated: 2020/09/25 20:30:18 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strcpy(char *dest, char *src)
 
 int		main(void)
 {
-	char a[] = "hello";
+	char a[] = "hello!";
 	char b[] = "salut";
 
 	ft_strcpy(b, a);

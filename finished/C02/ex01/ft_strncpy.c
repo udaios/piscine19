@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/18 17:35:31 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/24 18:05:46 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/23 17:48:02 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/25 21:08:20 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	ft_ft(int *nbr)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	*nbr = 42;
-}
+	int i;
 
-int		main(void)
-{
-	int a;
-	a = 19;
-	ft_ft(&a);
-	printf("%i", a);
-	return (0);
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }

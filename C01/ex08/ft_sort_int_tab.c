@@ -6,7 +6,7 @@
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 13:54:09 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/24 14:55:13 by mruhl            ###   ########.fr       */
+/*   Updated: 2020/09/24 20:48:38 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,18 @@ void	ft_swap(int *nb1, int *nb2)
 	*nb1 = *nb2;
 	*nb2 = temp;
 }
+
 void	ft_sort_int_tab(int *tab, int size)
 {
 	int i;
-	int j;
 
-	j = size;
 	i = 0;
-	while (i < 10)
+	while (i < size)
 	{
 		if ((tab[i] - tab[i + 1]) > 0)
 		{
 			ft_swap(&tab[i], &tab[i + 1]);
 			i = -1;
-//			ft_sort_int_tab(tab, j);
 		}
 		i++;
 	}

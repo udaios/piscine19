@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/18 17:35:31 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/24 18:05:46 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/23 19:25:33 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/25 21:48:07 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	ft_ft(int *nbr)
+char	*ft_strlowcase(char *str)
 {
-	*nbr = 42;
-}
+	char *tab;
 
-int		main(void)
-{
-	int a;
-	a = 19;
-	ft_ft(&a);
-	printf("%i", a);
-	return (0);
+	tab = str;
+	while (*tab != '\0')
+	{
+		if (*tab >= 65 && *tab <= 90)
+			*tab += 32;
+		tab++;
+	}
+	return (str);
 }

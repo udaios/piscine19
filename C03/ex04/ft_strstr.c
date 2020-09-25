@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/18 17:35:31 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/24 18:05:46 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/24 19:09:59 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/25 17:18:09 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-void	ft_ft(int *nbr)
+char	*ft_strstr(char *str, char *to_find)
 {
-	*nbr = 42;
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (str[i] != to_find[j])
+		i++;
+	while (to_find[j] != '\0')
+	{
+		while (str[i] == to_find[j])
+		{
+			
+		}
+	}
+	
+	return ();
 }
 
 int		main(void)
 {
-	int a;
-	a = 19;
-	ft_ft(&a);
-	printf("%i", a);
+	ft_strstr();
 	return (0);
 }
