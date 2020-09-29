@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strncmp.c                                          :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/23 22:11:30 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/23 22:17:07 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/28 21:54:53 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/28 21:59:24 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
-{
-	int i;
-	int res;
+#include <unistd.h>
 
-	res = 0;
-	i = 0;
-	while (i <= n)
+void	ft_putstr(char *str)
+{
+	while (*str != '\0')
 	{
-		res = s1[i] - s2[i];
-		return (res);
-	}
+		write(1, str, 1);
+		str++;
+	}	
 }
 
-int 	main(void)
+int		main(void)
 {
-	ft_strncmp();
+	char *str = "holla";
+
+	ft_putstr(str);
 	return (0);
 }

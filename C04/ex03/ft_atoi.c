@@ -1,42 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/23 11:17:00 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/28 13:24:22 by mruhl            ###   ########.fr       */
+/*   Created: 2020/09/29 11:12:49 by mruhl             #+#    #+#             */
+/*   Updated: 2020/09/29 23:56:57 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_iswhitespace(char *str)
 {
+	while (*str == ' ' || (*str <= 13 && *str >= 9))
+		str++;
+	return (str);
+}
+
+int		ft_atoi(char *str)
+{
+	int nb;
 	int i;
+	int	c;
+	int sign;
 
-	i = 0;
-	while (src[i] != '\0')
+	c = 0;
+	nb = 1;
+	*ft_iswhitespace(str);
+	while (*str == '-' || *str == '+')
 	{
-		dest[i] = src[i];
-		i++;
+		if (*str == '-')
+			c++;
+		str++;
 	}
-	printf("%s", dest);
-	printf("%s", src);
-	dest[i] = '\0';
-	printf("%s", dest);
-	printf("%s", src);
-
-	return (dest);
+	if (c % 2 != 0)
+		sign = -1;
+	while (*str >= '0' && *str <= '9')
+	{
+		nb = (nb * 10) + (*str - '0');
+		str++;
+	}
+	nb *= sign;
+	printf("%d", nb);
+	return (nb);
 }
 
 int		main(void)
 {
-	char a[] = "hello!";
-	char b[] = "salut ca va?";
+	char *str = "  	+--+++-12255kh46";
 
-	ft_strcpy(b, a);
+	ft_atoi(str);
 	return (0);
 }
