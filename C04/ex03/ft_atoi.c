@@ -6,52 +6,52 @@
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 11:12:49 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/30 00:06:16 by mruhl            ###   ########.fr       */
+/*   Updated: 2020/09/30 16:22:59 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-int		ft_iswhitespace(char *str, int i)
+char	*ft_iswhitespace(char *str)
 {
-	while (str[i] == ' ' || (str[i] <= 13 && str[i] >= 9))
-		i++;
-	return (i);
+	while (*str == ' ' || (*str <= 13 && *str >= 9))
+		str++;
+	return (str);
 }
 
 int		ft_atoi(char *str)
 {
 	int nb;
-	int i;
 	int	c;
 	int sign;
 
 	c = 0;
-	i = 0;
-	nb = 1;
-	ft_iswhitespace(str, i);
-	while (str[i] == '-' || str[i] == '+')
+	nb = 0;
+	str = ft_iswhitespace(str);
+	while (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
+		if (*str == '-')
 			c++;
-		i++;
+		str++;
 	}
 	if (c % 2 != 0)
 		sign = -1;
-	while (str[i] >= '0' && str[i] <= '9')
+	else if (c % 2 == 0)
+		sign = 1;
+	while (*str >= '0' && *str <= '9')
 	{
 		nb = (nb * 10) + (*str - '0');
-		i++;
+		str++;
 	}
-	nb *= sign;
+	nb = nb * sign;
 	printf("%d", nb);
 	return (nb);
 }
 
 int		main(void)
 {
-	char *str = "  	+--+++-12255kh46";
+	char *str = "  	+--+-++-614255kh46";
 
 	ft_atoi(str);
 	return (0);
