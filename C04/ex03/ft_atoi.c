@@ -6,7 +6,7 @@
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 11:12:49 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/30 16:22:59 by mruhl            ###   ########.fr       */
+/*   Updated: 2020/09/30 23:36:58 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,13 @@ int		ft_atoi(char *str)
 		str++;
 	}
 	nb = nb * sign;
-	printf("%d", nb);
 	return (nb);
 }
 
 int		main(void)
 {
-	char *str = "  	+--+-++-614255kh46";
+	char *str;
 
-	ft_atoi(str);
-	return (0);
+	str = " ---+--+1234ab567";
+	printf("%d\n", ft_atoi(str));
 }

@@ -6,7 +6,7 @@
 /*   By: mruhl <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/24 19:09:59 by mruhl             #+#    #+#             */
-/*   Updated: 2020/09/29 20:51:12 by mruhl            ###   ########.fr       */
+/*   Updated: 2020/09/30 19:19:29 by mruhl            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ char	*ft_strstr(char *str, char *to_find)
 
 	i = 0;
 	j = 0;
-	while (str[i] != to_find[j] && str[i] != '\0')
+	while (str[i] != '\0')
 	{
-		i++;
 		if (str[i] == to_find[j])
 		{
 			ptr = &str[i];
@@ -39,8 +38,9 @@ char	*ft_strstr(char *str, char *to_find)
 			}
 			j = 0;
 		}
+		i++;
 	}
-	return (NULL);
+	return (0);
 }
 
 int		main(void)
@@ -51,7 +51,7 @@ int		main(void)
 	char *result_ft;
 
 	haystack = "Foo Bar Baz";
-	needle = "Bar";
+	needle = "Foo";
 	result_c = strstr(haystack, needle);
 	result_ft = ft_strstr(haystack, needle);
 	printf("%p / %p\n", result_c, result_ft);
